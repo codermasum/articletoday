@@ -20,10 +20,6 @@ class ArticleApplication :Application() {
 
     }
 
-    fun getMyComponent(): APIComponent {
-        return apiComponent
-    }
-
     fun initDaggerComponent(): APIComponent {
         apiComponent = DaggerAPIComponent
             .builder()

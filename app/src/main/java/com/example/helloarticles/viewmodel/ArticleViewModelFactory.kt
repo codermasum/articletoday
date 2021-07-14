@@ -4,9 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.helloarticles.ArticleApplication
 import com.example.helloarticles.model.di.APIComponent
-import com.example.helloarticles.model.di.APIModule
-import com.example.helloarticles.model.di.DaggerAPIComponent
-import com.example.helloarticles.model.network.APIURL
 import com.example.helloarticles.model.network.ArticleRepository
 import javax.inject.Inject
 

@@ -1,15 +1,13 @@
 package com.example.helloarticles.model.network
 
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.example.helloarticles.ArticleApplication
 import com.example.helloarticles.model.di.APIComponent
 import com.example.helloarticles.model.reponse.Post
 import com.example.helloarticles.model.reponse.ResponseArticles
 import com.example.helloarticles.utils.Results
-import retrofit2.*
-import java.io.ObjectInput
+import retrofit2.HttpException
+import retrofit2.Response
+import retrofit2.Retrofit
 import java.util.*
 import javax.inject.Inject
 
@@ -26,6 +24,11 @@ class ArticleRepository :BaseRepository(){
     }
 
     suspend fun fetchPostInfoList(): Results<ArrayList<Post>> {
+        /**
+         * Note : API key should be stored in secure way
+         * e.g. with NDK in C/C++ code which is hard for reverse engineering
+         * For time convenient I have used directly as String value.
+         */
         val apikey = "8cKjN8dGwJCP3i1BxeTtlJEUazqpaG9D"
         val apiService: APIService = retrofit.create(APIService::class.java)
         var result: Results<ArrayList<Post>> = handleSuccess(arrayListOf())

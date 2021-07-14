@@ -1,13 +1,11 @@
 package com.example.helloarticles.viewmodel
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.helloarticles.model.network.ArticleRepository
 import com.example.helloarticles.model.reponse.Post
-import com.example.helloarticles.model.reponse.ResponseArticles
 import com.example.helloarticles.utils.Results
-import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
 class ArticleViewModel(articleRepository: ArticleRepository): ViewModel() {
